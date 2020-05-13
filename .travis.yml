@@ -49,7 +49,7 @@ before_install:
   - sudo apt-get install dpkg
   - sudo apt-get install -y python-catkin-pkg python-rosdep python-wstool ros-$ROS_DISTRO-desktop-full python-catkin-tools
   - sudo apt-get install freeglut3-dev libglew-dev
-  - sudo apt-get install ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-octomap-msgs
+  - sudo apt-get install ros-$ROS_DISTRO-octomap ros-$ROS_DISTRO-octomap-ros ros-$ROS_DISTRO-octomap-msgs
   - source /opt/ros/$ROS_DISTRO/setup.bash
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
@@ -79,6 +79,7 @@ before_script:
   # package depdencies: install using rosdep.
   - cd ~/catkin_ws/src
   - ls
+  - cd rovio_bsp && git submodule update --init --recursive && cd ..
   - git clone https://github.com/ANYbotics/kindr.git && cd kindr && git checkout 0.0.1 && cd ..
   - git clone https://github.com/unr-arl/rhem_planner.git 
   # - rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
