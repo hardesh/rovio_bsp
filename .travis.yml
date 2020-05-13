@@ -49,6 +49,7 @@ before_install:
   - sudo apt-get install dpkg
   - sudo apt-get install -y python-catkin-pkg python-rosdep python-wstool ros-$ROS_DISTRO-desktop-full python-catkin-tools
   - sudo apt-get install freeglut3-dev libglew-dev
+  - sudo apt-get install ros-melodic-octomap ros-melodic-octomap-ros ros-melodic-octomap-msgs
   - source /opt/ros/$ROS_DISTRO/setup.bash
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
